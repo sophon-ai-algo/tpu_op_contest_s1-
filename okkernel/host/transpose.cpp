@@ -59,6 +59,9 @@ int transpose(bm_handle_t &handle, param_t &param, const char *device_func_name)
     param.input_addr = bm_mem_get_device_addr(input_dev);
 
     float* input_host = new float[len];
+    for(int i=0;i<len;i++){
+        input_host[i] = dist_value(rng);
+    }
     float* output_host = new float[len];
     float* output_ref = new float[len];
 
